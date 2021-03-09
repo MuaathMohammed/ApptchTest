@@ -1,0 +1,25 @@
+
+Login web Api Code
+
+[HttpGet("{username},{password}")]
+        public async Task<ActionResult<Users>> Login(string username,string password)
+        {
+            var h = from u in _context.Users where u.UserName == username && u.UserPassword== password select u;
+            var users = h.FirstOrDefault<Users>();
+
+            if (users == null)
+            {
+                return NotFound();
+            }
+
+            return users;
+        }
+
+
+get Blogs Data from WebApi code
+
+       [HttpGet]
+        public async Task<ActionResult<IEnumerable<Blogs>>> GetBlogs()
+        {
+            return await _context.Blogs.ToListAsync();
+        }
