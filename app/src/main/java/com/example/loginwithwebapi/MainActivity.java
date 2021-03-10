@@ -42,6 +42,7 @@ IBlogApi iBlogApi;
         recyclerView=findViewById(R.id.RcVBlog);
         recyclerView.setLayoutManager(staggeredGridLayoutManager);
         recyclerView.hasFixedSize();
+        arrayList=new ArrayList<Blogs>();
         iBlogApi= ApiUtils.getBlogService();
         Call<ArrayList<Blogs>> call =iBlogApi.GetBlogs();
 
