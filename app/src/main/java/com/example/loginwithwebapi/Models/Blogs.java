@@ -1,11 +1,25 @@
 package com.example.loginwithwebapi.Models;
 
 public class Blogs {
-    public  int BlogID;
-    public String BlogTitle;
-    public String BlogCreator;
-    public String BlogDescription;
-    public String BlogImage;
+    @SerializedName("blogID")
+    @Expose
+      int BlogID;
+
+    @SerializedName("blogTitle")
+    @Expose
+     String BlogTitle;
+
+    @SerializedName("blogCreator")
+    @Expose
+     String BlogCreator;
+
+    @SerializedName("blogDescription")
+    @Expose
+     String BlogDescription;
+
+    @SerializedName("blogImage")
+    @Expose
+     String BlogImage;
 
     public Blogs(int blogID, String blogTitle, String blogCreator, String blogDescription, String blogImage) {
         BlogID = blogID;
